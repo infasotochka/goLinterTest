@@ -1,0 +1,22 @@
+name: Go Ci + Linter
+on:
+  push:
+    branches: [ "main" ]
+
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Перенос проекта
+        uses: actions/checkout@v5
+        
+      - name: Установка golang
+        uses: actions/setup-go@v6
+        with:
+          go-version: 1.25.1
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v9
+        with:
+          version: v2.6
