@@ -7,7 +7,7 @@ import (
 
 func divide(a, b int) (int, error) {
 	if b == 0 {
-		return 0, errors.New("Жесть. Деление на нуль")
+		return 0, errors.New("жесть. Деление на нуль")
 	}
 	return a / b, nil
 }
